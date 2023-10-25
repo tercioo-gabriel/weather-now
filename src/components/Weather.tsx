@@ -36,7 +36,7 @@ const Weather: React.FC<WeatherProps> = ({ city, weatherData }) => {
         {weatherData && (
         
           <div className='flex flex-col justify-between'>
-            <h1 className='text-7xl sm:text-9xl mb-4 font-semibold font-["Lexend"]'>{weatherData.temperature}</h1>
+            <h1 className='text-7xl sm:text-9xl mb-4 font-semibold'>{weatherData.temperature}</h1>
             <p className='text-lg sm:text-2xl px-20'>{translateWeather[weatherData.description] || weatherData.description} <span className='hidden sm:block'>{weatherData.wind}</span></p>
           </div>
       )}
