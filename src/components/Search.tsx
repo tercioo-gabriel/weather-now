@@ -14,13 +14,20 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
     }
   }
 
+  const handleKeyDown = (e: any) => {
+    if (e.code === "Enter") {
+    handleSearch();
+    }
+  };
+
   return (
     <div className='maxWidth mb-20 flex mx-auto'>
       <input
         type="text"
         placeholder="Digite o nome da cidade"
         value={searchedCity}
-        onChange={(e) => setSearchedCity(e.target.value)}
+        onChange={(e) => setSearchedCity(e.target.value)}        
+        onKeyDown={handleKeyDown}
         className="w-full bg-zinc-200 text-zinc-700 h-10 px-5 pr-10 rounded-md text-sm md:text-base focus:outline-none"
       />
       <button 
